@@ -1,4 +1,5 @@
 #include<iostream>
+#include <bits/stdc++.h> 
 using namespace std;
 struct process
 {
@@ -13,6 +14,63 @@ struct result
     int waiting_time;
     int turnaround_time;
 };
+  
+class Stack { 
+    // Two inbuilt queues 
+    queue<int> q1, q2; 
+  
+    // To maintain current number of 
+    // elements 
+    int curr_size; 
+  
+public: 
+    Stack() 
+    { 
+        curr_size = 0; 
+    } 
+  
+    void push(int x) 
+    { 
+        curr_size++; 
+  
+        // Push x first in empty q2 
+        q2.push(x); 
+  
+        // Push all the remaining 
+        // elements in q1 to q2. 
+        while (!q1.empty()) { 
+            q2.push(q1.front()); 
+            q1.pop(); 
+        } 
+  
+        // swap the names of two queues 
+        queue<int> q = q1; 
+        q1 = q2; 
+        q2 = q; 
+    } 
+  
+    void pop() 
+    { 
+  
+        // if no elements are there in q1 
+        if (q1.empty()) 
+            return; 
+        q1.pop(); 
+        curr_size--; 
+    } 
+  
+    int top() 
+    { 
+        if (q1.empty()) 
+            return -1; 
+        return q1.front(); 
+    } 
+  
+    int size() 
+    { 
+        return curr_size; 
+    } 
+}; 
 int main()
 {
 	struct process obj[30];
@@ -20,10 +78,15 @@ int main()
 	int n,pos,min,pro_exec,time=0,end,k,flag,ideal_time,sumwait=0,sumturn=0;
 	cout<<"Enter the no. of processes-"<<endl;
 	cin>>n;
+	 Stack s; 
+    s.push(n);  
+  
+    cout << "current size: " << s.size() 
+         << endl; 
 
 	for(int i=1;i<=n;i++)
 	{
-		cout<<"\n\nPROCESS P\n"<<i;
+		cout<<"\n\nPROCESS P \n"<<i;
 		obj[i].pno=i;
 		X:cout<<"Arrival Time-";
 		cin>>obj[i].process_arrival;
@@ -40,25 +103,6 @@ int main()
                      goto Y;
 		}
 	}
-/*	time!=0;
-	for(i=1;i<=n;i++)
-	{
-	if(obj[i].process_arrival==0)
-        {
-            printf(i);
-            for(j=i;j<n;j++)
-            {
-                obj[j]=obj[j+1];
-            }
-            time=obj[1].process_arrival;
-            n--;
-            i--;
-        }
-        if(obj[i].process_arrival<time )
-        {
-            time=obj[i].process_arrival;
-        }
-	}*/
 	end = n;
 	min=0;
 	k=1;
