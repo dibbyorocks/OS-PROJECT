@@ -1,5 +1,11 @@
-Design a scheduler with multilevel queue having two queues which will schedule the processes on the basis of pre-emptive shortest remaining processing time first algorithm (SROT) followed by a scheduling in which each process will get 2 units of time to execute. Also note that queue 1 has higher priority than queue.
-Consider the following set of processes (for reference)with their arrival times and the CPU burst times in milliseconds.
+#Consider a scheduler which schedules the job by considering the arrival time of the
+processes where arrival time if given as 0 is discarded or displayed as error. The scheduler
+implements the shortest job first scheduling policy, but checks the queue of the processes after
+the every process terminates and time taken for checking and arranging the process according
+to the shortest job is 2 time unit. Compute the waiting time, turnaround time and average waiting
+time and turnaround time of the processes. Also compute the total time taken by the processor
+to compute all the jobs
+
 
 -------------------------------------
 Process Arrival-Time  Burst-Time
@@ -10,4 +16,4 @@ P3	2	3
 P4	4	1
 -------------------------------------
 
-Calculate the average turnaround time and average waiting time for each process. The input for number of processes and their arrival time, burst time should be given by the user.
+Calculate the average turnaround time and average waiting time for each process. T
