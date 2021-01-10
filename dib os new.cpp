@@ -20,13 +20,7 @@ int main()
 	struct result res[30];
 	int n,pos,min,pro_exec,time=0,end,k,flag,ideal_time,sumwait=0,sumturn=0;
 	cout<<"Enter the no. of processes-"<<endl;
-	cin>>n;
-	 Stack s; 
-    s.push(n);  
-  
-    cout << "current size: " << s.size() 
-         << endl; 
-
+	cin>>n; 
 	for(int i=1;i<=n;i++)
 	{
 		cout<<"\n\nPROCESS P \n"<<i;
