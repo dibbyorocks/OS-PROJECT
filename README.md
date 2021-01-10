@@ -9,10 +9,9 @@ time and average turnaround time of the processes. Also compute the total time t
 -------------------------------------
 Process Arrival-Time  Burst-Time
 -------------------------------------
-P1	0	5
-P2	1	3
-P3	2	3
-P4	4	1
+P1	       0	            5
+P2	       1              3
+P3	       2	            3
+P4	       4	            1
 -------------------------------------
 
-Calculate the average turnaround time and average waiting time for each process. T
