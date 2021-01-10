@@ -3,8 +3,7 @@ processes where arrival time if given as 0 is discarded or displayed as error. T
 implements the shortest job first scheduling policy, but checks the queue of the processes after
 the every process terminates and time taken for checking and arranging the process according
 to the shortest job is 2 time unit. Compute the waiting time, turnaround time and average waiting
-time and turnaround time of the processes. Also compute the total time taken by the processor
-to compute all the jobs
+time and average turnaround time of the processes. Also compute the total time taken by the processor to compute all the jobs
 
 
 -------------------------------------
